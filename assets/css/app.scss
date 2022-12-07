@@ -1,6 +1,12 @@
 // 폰트 설정
 @import url('https://fonts.googleapis.com/css2?family=Poor+Story&family=Roboto:wght@100;300;400;500;700&display=swap');
 
+$brand-green: #0e2d16;
+$brand-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12),
+0 8px 10px -5px rgba(0, 0, 0, 0.2);
+
+
+
 body, 
 h1, 
 h2, 
@@ -24,8 +30,7 @@ small {
 .shadow-box {
   transition: 0.5s ease-in;
   &:hover {
-    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12),
-      0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: $brand-shadow;
   }
 }
 
@@ -42,6 +47,51 @@ small {
   }
 
   #navPrimary {
-    background-color: #0e2d16;
+    background-color: $brand-green;
+
+    .offcanvas {
+      width: 300px !important;
+
+      .mobile-menu {
+        a {
+          font-size: 1.1rem !important;
+
+          &.active {
+            font-weight: bold !important;
+            color: $brand-green;
+          }
+        }
+
+        li {
+          padding-left: 0.75rem;
+          line-height: 1.75;
+        }
+      }
+    }
+  }
+}
+
+// Carousel
+#frontCarousel {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-radius: 1rem;
+
+  .carousel-inner {
+    border-radius: 1rem;
+    box-shadow: $brand-shadow;
+
+    .carousel-item {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 70vh;
+
+      .carousel-overlay {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.35);
+      }
+    }
   }
 }
