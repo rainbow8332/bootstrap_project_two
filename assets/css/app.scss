@@ -1,33 +1,38 @@
-// 폰트 설정
-@import url('https://fonts.googleapis.com/css2?family=Poor+Story&family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
 $brand-green: #0e2d16;
 $brand-light-beige: #aba097;
-$brand-yellowish : #b1a285;
+$brand-yellowish: #b1a285;
+$brand-purple: #93c;
+$brand-blue: #0d47a1;
 $brand-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12),
-0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  0 8px 10px -5px rgba(0, 0, 0, 0.2);
 
+@mixin background($height) {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: $height;
+}
 
-
-
-body, 
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
-h6, 
-p, 
-a, 
-ul, 
-li, 
-button, 
-input, 
-textarea, 
-select, 
-span, 
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+li,
+button,
+input,
+textarea,
+select,
+span,
 small {
-  font-family: 'Roboto' , sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .section-content {
@@ -43,13 +48,12 @@ small {
 
 #header {
   #navTop {
-    .socials{
+    .socials {
       a {
         img {
           border-radius: 0.75rem;
         }
       }
-
     }
   }
 
@@ -78,7 +82,6 @@ small {
   }
 }
 
-// Carousel
 #frontCarousel {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -89,10 +92,7 @@ small {
     box-shadow: $brand-shadow;
 
     .carousel-item {
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      height: 70vh;
+      @include background(70vh);
 
       .carousel-overlay {
         height: 100%;
@@ -103,7 +103,6 @@ small {
   }
 }
 
-// Front programs section
 #frontPrograms {
   background-color: lighten($brand-light-beige, 25%);
 
@@ -112,26 +111,23 @@ small {
 
     a {
       color: $brand-green;
-    }
 
-    img {
-      border-radius: 1rem;
-      object-fit: cover;
-      object-position: center;
-      height: 130px;
-      width: 100%;
-      margin-bottom: 1rem;
-    }
+      img {
+        border-radius: 1rem;
+        object-fit: cover;
+        object-position: center;
+        height: 130px;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
 
-    p {
-      font-size:1.1rem ;
+      p {
+        font-size: 1.1rem;
+      }
     }
-
   }
-
 }
 
-// Front infos section[S] 
 #frontInfos {
   .card,
   img {
@@ -165,40 +161,49 @@ small {
       }
     }
   }
-}#frontInfos {
-  .card,
-  img { 
-    border-radius: 1rem;
-  }
+}
 
-  .socials {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+#frontLatest {
+  background-color: lighten($brand-light-beige, 25%);
 
-    .card {
-      border: none;
-      border-radius: 3rem;
+  .latest-posts,
+  .latest-reviews {
+    &-header {
+      padding-left: 0.5rem;
+      border-left: 0.5rem solid $brand-purple;
+
+      h4 {
+        color: $brand-purple;
+      }
     }
 
-    .img {
-      border-radius: 3rem;
-    }
-  }
+    .latest-post,
+    .latest-review {
+      margin-bottom: 1rem;
+      border: 0;
+      box-shadow: $brand-shadow;
 
-  .infos {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+      &-featured {
+        @include background(13rem);
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+      }
 
-    .card.card-body {
-      background-color: lighten($brand-yellowish, $amount: 20%);
-      min-height: 20rem;
+      &-text {
+        a {
+          text-decoration: none;
+          color: $brand-blue;
 
-      p{ 
+          &:hover {
+            color: lighten($brand-blue, 20%);
+          }
+        }
+
+        p {
           font-size: 1.1rem;
+          font-weight: lighter;
+        }
       }
     }
   }
-  
 }
-
-
